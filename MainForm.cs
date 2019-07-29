@@ -40,14 +40,6 @@ namespace PrevCap
             filePathText.Text = folderBrowserDialog1.SelectedPath = watcher.SaveDirectory;
             Left = int.Parse(config.AppSettings.Settings["x"].Value);
             Top = int.Parse(config.AppSettings.Settings["y"].Value);
-            foreach (Screen screen in Screen.AllScreens)
-            {
-                DisplayItem item = new DisplayItem();
-                item.Screen = screen;
-                displayCombo.Items.Add(item);
-            }
-            displayCombo.SelectedIndex = 0;
-            displayCombo.Enabled = false;
         }
 
         private void getPositionButton_Click(object sender, EventArgs e)
@@ -131,10 +123,7 @@ namespace PrevCap
             watcher = new Watcher();
             watcher.TargetGame = targetGame;
             watcher.SaveDirectory = filePathText.Text;
-            if (displayCombo.SelectedItem != null)
-            {
-                watcher.Screen = (displayCombo.SelectedItem as DisplayItem).Screen;
-            }
+            watcher.Screen = Screen.PrimaryScreen;
         }
 
         private void target_CheckedChanged(object sender, EventArgs e)
@@ -179,11 +168,6 @@ namespace PrevCap
         private void watchDurationSpinner_ValueChanged(object sender, EventArgs e)
         {
             watcher.UpdateTimer((int)watchIntervalSpinner.Value, (int)watchDurationSpinner.Value);
-        }
-
-        private void displayCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            watcher.Screen = (displayCombo.SelectedItem as DisplayItem).Screen;
         }
     }
 }

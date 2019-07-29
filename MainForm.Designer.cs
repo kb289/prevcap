@@ -46,8 +46,6 @@
             this.watchDurationSpinner = new System.Windows.Forms.NumericUpDown();
             this.watchLengthLabel = new System.Windows.Forms.Label();
             this.showHistoryImageButton = new System.Windows.Forms.Button();
-            this.displayLabel = new System.Windows.Forms.Label();
-            this.displayCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.watchIntervalSpinner)).BeginInit();
             this.targetGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.watchDurationSpinner)).BeginInit();
@@ -253,32 +251,11 @@
             this.showHistoryImageButton.UseVisualStyleBackColor = true;
             this.showHistoryImageButton.Click += new System.EventHandler(this.showHistoryImageButton_Click);
             // 
-            // displayLabel
-            // 
-            this.displayLabel.AutoSize = true;
-            this.displayLabel.Location = new System.Drawing.Point(160, 22);
-            this.displayLabel.Name = "displayLabel";
-            this.displayLabel.Size = new System.Drawing.Size(64, 12);
-            this.displayLabel.TabIndex = 19;
-            this.displayLabel.Text = "ディスプレイ：";
-            // 
-            // displayCombo
-            // 
-            this.displayCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.displayCombo.FormattingEnabled = true;
-            this.displayCombo.Location = new System.Drawing.Point(229, 18);
-            this.displayCombo.Name = "displayCombo";
-            this.displayCombo.Size = new System.Drawing.Size(130, 20);
-            this.displayCombo.TabIndex = 20;
-            this.displayCombo.SelectedIndexChanged += new System.EventHandler(this.displayCombo_SelectedIndexChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 161);
-            this.Controls.Add(this.displayCombo);
-            this.Controls.Add(this.displayLabel);
             this.Controls.Add(this.showHistoryImageButton);
             this.Controls.Add(this.watchLengthLabel);
             this.Controls.Add(this.watchDurationSpinner);
@@ -330,8 +307,6 @@
         private System.Windows.Forms.NumericUpDown watchDurationSpinner;
         private System.Windows.Forms.Label watchLengthLabel;
         private System.Windows.Forms.Button showHistoryImageButton;
-        private System.Windows.Forms.Label displayLabel;
-        private System.Windows.Forms.ComboBox displayCombo;
     }
 }
 
