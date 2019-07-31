@@ -46,6 +46,8 @@
             this.watchDurationSpinner = new System.Windows.Forms.NumericUpDown();
             this.watchLengthLabel = new System.Windows.Forms.Label();
             this.showHistoryImageButton = new System.Windows.Forms.Button();
+            this.customRadio = new System.Windows.Forms.RadioButton();
+            this.customButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.watchIntervalSpinner)).BeginInit();
             this.targetGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.watchDurationSpinner)).BeginInit();
@@ -185,14 +187,17 @@
             this.shiroproRadio.TabIndex = 13;
             this.shiroproRadio.Text = "城プロ";
             this.shiroproRadio.UseVisualStyleBackColor = true;
+            this.shiroproRadio.CheckedChanged += new System.EventHandler(this.target_CheckedChanged);
             // 
             // targetGroup
             // 
+            this.targetGroup.Controls.Add(this.customButton);
+            this.targetGroup.Controls.Add(this.customRadio);
             this.targetGroup.Controls.Add(this.kancolleRadio);
             this.targetGroup.Controls.Add(this.shiroproRadio);
             this.targetGroup.Location = new System.Drawing.Point(8, 4);
             this.targetGroup.Name = "targetGroup";
-            this.targetGroup.Size = new System.Drawing.Size(139, 41);
+            this.targetGroup.Size = new System.Drawing.Size(219, 41);
             this.targetGroup.TabIndex = 14;
             this.targetGroup.TabStop = false;
             this.targetGroup.Text = "対象";
@@ -251,6 +256,27 @@
             this.showHistoryImageButton.UseVisualStyleBackColor = true;
             this.showHistoryImageButton.Click += new System.EventHandler(this.showHistoryImageButton_Click);
             // 
+            // customRadio
+            // 
+            this.customRadio.AutoSize = true;
+            this.customRadio.Location = new System.Drawing.Point(132, 16);
+            this.customRadio.Name = "customRadio";
+            this.customRadio.Size = new System.Drawing.Size(59, 16);
+            this.customRadio.TabIndex = 14;
+            this.customRadio.Text = "カスタム";
+            this.customRadio.UseVisualStyleBackColor = true;
+            this.customRadio.CheckedChanged += new System.EventHandler(this.target_CheckedChanged);
+            // 
+            // customButton
+            // 
+            this.customButton.Location = new System.Drawing.Point(190, 14);
+            this.customButton.Name = "customButton";
+            this.customButton.Size = new System.Drawing.Size(19, 19);
+            this.customButton.TabIndex = 15;
+            this.customButton.Text = "...";
+            this.customButton.UseVisualStyleBackColor = true;
+            this.customButton.Click += new System.EventHandler(this.customButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -307,6 +333,8 @@
         private System.Windows.Forms.NumericUpDown watchDurationSpinner;
         private System.Windows.Forms.Label watchLengthLabel;
         private System.Windows.Forms.Button showHistoryImageButton;
+        private System.Windows.Forms.Button customButton;
+        private System.Windows.Forms.RadioButton customRadio;
     }
 }
 

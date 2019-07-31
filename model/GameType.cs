@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace PrevCap
+namespace PrevCap.Model
 {
     public abstract class GameType
     {
-        public virtual String DisplayName { get; }
-        public virtual String Identifier { get; }
-        public virtual Size Size { get; }
-        public Point Base { get; set; }
+        public virtual String DisplayName { get; protected set; }
+        public virtual String Identifier { get; protected set; }
+        public virtual Size Size { get; protected set; }
+        public virtual Point Base { get; set; }
     }
 }

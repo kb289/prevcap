@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace PrevCap.model
+namespace PrevCap.Model
 {
     public class Kancolle : GameType
     {

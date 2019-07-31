@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PrevCap.util
+namespace PrevCap.Util
 {
     public class OnceTimer
     {

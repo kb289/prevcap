@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PrevCap.model
+namespace PrevCap.Model
 {
     public class DisplayItem
     {

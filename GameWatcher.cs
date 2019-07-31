@@ -7,13 +7,13 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-using PrevCap.model;
+using PrevCap.Model;
 
 namespace PrevCap
 {
     // TODO: [何分前まで/何枚まで]を切り替えられるようにする
     // TODO: マルチディスプレイ対応
-    public class Watcher
+    public class GameWatcher
     {
         public bool Watching { get; set; }
         public List<HistoryImageItem> ImageList { get { return imageQueue.ToList(); } }
@@ -24,14 +24,14 @@ namespace PrevCap
         Timer watchTimer;
         Queue<HistoryImageItem> imageQueue = new Queue<HistoryImageItem>();
 
-        public Watcher()
+        public GameWatcher()
         {
             this.Watching = true;
         }
 
         public Bitmap CaptureScreenBitmap()
         {
-            Bitmap bitmap = new Bitmap(Screen.Bounds.Width, Screen.Bounds.Height);
+            Bitmap bitmap = new Bitmap(Screen.Bounds.Width, Screen.Bounds.Height, PixelFormat.Format32bppRgb);
             using (Graphics g = Graphics.FromImage(bitmap))
                 g.CopyFromScreen(new Point(0, 0), new Point(0, 0), bitmap.Size);
             return bitmap;
@@ -39,7 +39,7 @@ namespace PrevCap
 
         public Bitmap CaptureBitmap()
         {
-            Bitmap bitmap = new Bitmap(TargetGame.Size.Width, TargetGame.Size.Height);
+            Bitmap bitmap = new Bitmap(TargetGame.Size.Width, TargetGame.Size.Height, PixelFormat.Format32bppRgb);
             using (Graphics g = Graphics.FromImage(bitmap))
                 g.CopyFromScreen(new Point(TargetGame.Base.X, TargetGame.Base.Y), new Point(0, 0), bitmap.Size);
             return bitmap;

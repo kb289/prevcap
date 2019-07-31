@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-using PrevCap.model;
+using PrevCap.Model;
 
 namespace PrevCap
 {
@@ -16,10 +16,10 @@ namespace PrevCap
     {
         const int RowHeight = 160;
 
-        private Watcher watcher;
+        private GameWatcher watcher;
         private List<HistoryImageItem> itemList;
 
-        public HistoryImageForm(Watcher watcher)
+        public HistoryImageForm(GameWatcher watcher)
         {;
             this.watcher = watcher;
             this.itemList = watcher.ImageList;

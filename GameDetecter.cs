@@ -6,13 +6,15 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
+using PrevCap.Model;
+
 namespace PrevCap
 {
     // TODO: ゲーム種別自動判別（不要？）
     public class GameDetecter
     {
-        // 成功時はgame.Baseを更新してtrueを返す
-        public bool SearchBasePoint(GameType game)
+        // 成功時は左上座標のPointを返す
+        public Point? SearchBasePoint(GameType game)
         {
             int baseX = 0;
             int baseY = 0;
@@ -137,7 +139,7 @@ namespace PrevCap
             bitmap.UnlockBits(data);
             bitmap.Dispose();
 
-            return success;
+            return success ? new Point(baseX, baseY) : null as Point?;
         }
     }
 }

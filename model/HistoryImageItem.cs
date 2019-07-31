@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PrevCap.model
+namespace PrevCap.Model
 {
     public class HistoryImageItem
     {
