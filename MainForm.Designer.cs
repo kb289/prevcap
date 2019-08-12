@@ -42,12 +42,13 @@
             this.kancolleRadio = new System.Windows.Forms.RadioButton();
             this.shiroproRadio = new System.Windows.Forms.RadioButton();
             this.targetGroup = new System.Windows.Forms.GroupBox();
+            this.customButton = new System.Windows.Forms.Button();
+            this.customRadio = new System.Windows.Forms.RadioButton();
             this.successGettingPositionMark = new System.Windows.Forms.Label();
             this.watchDurationSpinner = new System.Windows.Forms.NumericUpDown();
             this.watchLengthLabel = new System.Windows.Forms.Label();
             this.showHistoryImageButton = new System.Windows.Forms.Button();
-            this.customRadio = new System.Windows.Forms.RadioButton();
-            this.customButton = new System.Windows.Forms.Button();
+            this.openSaveDirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.watchIntervalSpinner)).BeginInit();
             this.targetGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.watchDurationSpinner)).BeginInit();
@@ -66,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 56);
+            this.label1.Location = new System.Drawing.Point(6, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 1;
@@ -74,7 +75,7 @@
             // 
             // filePathText
             // 
-            this.filePathText.Location = new System.Drawing.Point(57, 53);
+            this.filePathText.Location = new System.Drawing.Point(51, 53);
             this.filePathText.Name = "filePathText";
             this.filePathText.Size = new System.Drawing.Size(263, 19);
             this.filePathText.TabIndex = 2;
@@ -82,7 +83,7 @@
             // 
             // showFBDButton
             // 
-            this.showFBDButton.Location = new System.Drawing.Point(326, 51);
+            this.showFBDButton.Location = new System.Drawing.Point(319, 51);
             this.showFBDButton.Name = "showFBDButton";
             this.showFBDButton.Size = new System.Drawing.Size(23, 23);
             this.showFBDButton.TabIndex = 3;
@@ -202,6 +203,27 @@
             this.targetGroup.TabStop = false;
             this.targetGroup.Text = "対象";
             // 
+            // customButton
+            // 
+            this.customButton.Location = new System.Drawing.Point(190, 14);
+            this.customButton.Name = "customButton";
+            this.customButton.Size = new System.Drawing.Size(19, 19);
+            this.customButton.TabIndex = 15;
+            this.customButton.Text = "...";
+            this.customButton.UseVisualStyleBackColor = true;
+            this.customButton.Click += new System.EventHandler(this.customButton_Click);
+            // 
+            // customRadio
+            // 
+            this.customRadio.AutoSize = true;
+            this.customRadio.Location = new System.Drawing.Point(132, 16);
+            this.customRadio.Name = "customRadio";
+            this.customRadio.Size = new System.Drawing.Size(59, 16);
+            this.customRadio.TabIndex = 14;
+            this.customRadio.Text = "カスタム";
+            this.customRadio.UseVisualStyleBackColor = true;
+            this.customRadio.CheckedChanged += new System.EventHandler(this.target_CheckedChanged);
+            // 
             // successGettingPositionMark
             // 
             this.successGettingPositionMark.AutoSize = true;
@@ -256,32 +278,24 @@
             this.showHistoryImageButton.UseVisualStyleBackColor = true;
             this.showHistoryImageButton.Click += new System.EventHandler(this.showHistoryImageButton_Click);
             // 
-            // customRadio
+            // openSaveDirButton
             // 
-            this.customRadio.AutoSize = true;
-            this.customRadio.Location = new System.Drawing.Point(132, 16);
-            this.customRadio.Name = "customRadio";
-            this.customRadio.Size = new System.Drawing.Size(59, 16);
-            this.customRadio.TabIndex = 14;
-            this.customRadio.Text = "カスタム";
-            this.customRadio.UseVisualStyleBackColor = true;
-            this.customRadio.CheckedChanged += new System.EventHandler(this.target_CheckedChanged);
-            // 
-            // customButton
-            // 
-            this.customButton.Location = new System.Drawing.Point(190, 14);
-            this.customButton.Name = "customButton";
-            this.customButton.Size = new System.Drawing.Size(19, 19);
-            this.customButton.TabIndex = 15;
-            this.customButton.Text = "...";
-            this.customButton.UseVisualStyleBackColor = true;
-            this.customButton.Click += new System.EventHandler(this.customButton_Click);
+            this.openSaveDirButton.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.openSaveDirButton.Location = new System.Drawing.Point(345, 51);
+            this.openSaveDirButton.Name = "openSaveDirButton";
+            this.openSaveDirButton.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.openSaveDirButton.Size = new System.Drawing.Size(23, 23);
+            this.openSaveDirButton.TabIndex = 19;
+            this.openSaveDirButton.Text = "➡";
+            this.openSaveDirButton.UseVisualStyleBackColor = true;
+            this.openSaveDirButton.Click += new System.EventHandler(this.openSaveDirButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 161);
+            this.Controls.Add(this.openSaveDirButton);
             this.Controls.Add(this.showHistoryImageButton);
             this.Controls.Add(this.watchLengthLabel);
             this.Controls.Add(this.watchDurationSpinner);
@@ -335,6 +349,7 @@
         private System.Windows.Forms.Button showHistoryImageButton;
         private System.Windows.Forms.Button customButton;
         private System.Windows.Forms.RadioButton customRadio;
+        private System.Windows.Forms.Button openSaveDirButton;
     }
 }
 

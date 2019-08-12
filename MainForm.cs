@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 using PrevCap.Model;
 using PrevCap.Util;
@@ -253,6 +254,13 @@ namespace PrevCap
                 updateTargetGame();
             }
             watcher.Watching = true;
+        }
+
+        private void openSaveDirButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(filePathText.Text))
+                return;
+            Process.Start(filePathText.Text);
         }
     }
 }
